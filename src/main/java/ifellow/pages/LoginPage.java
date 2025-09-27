@@ -1,4 +1,4 @@
-package pages;
+package ifellow.pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
@@ -14,16 +14,14 @@ public class LoginPage extends Page {
 
     private final SelenideElement loginButton = $x("//input[@id='login-form-submit' and @value='Вход']");
 
-    public void open() {
-        super.open("https://edujira.ifellow.ru/login.jsp");
-    }
-
-    public void login(String username, String password) {
+    public DashboardPage login(String username, String password) {
         usernameField.setValue(username);
         passwordField.setValue(password);
         loginButton.click();
+        return Selenide.page(DashboardPage.class);
     }
 
+    @Override
     public boolean isDisplayed() {
         return usernameField.isDisplayed() && passwordField.isDisplayed() && loginButton.isDisplayed();
     }

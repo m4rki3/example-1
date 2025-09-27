@@ -1,4 +1,4 @@
-package resources;
+package ifellow.tools;
 
 public class PagerDataHelper {
     public int getPagesCount(String data) {

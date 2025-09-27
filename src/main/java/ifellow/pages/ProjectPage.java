@@ -1,4 +1,4 @@
-package pages;
+package ifellow.pages;
 
 import com.codeborne.selenide.SelenideElement;
 
@@ -13,6 +13,7 @@ public class ProjectPage extends HeaderPage {
         return pager.getText();
     }
 
+    @Override
     public boolean isDisplayed() {
         return true;
     }
